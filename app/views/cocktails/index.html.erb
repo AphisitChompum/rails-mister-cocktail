@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://petitpalaisdaglae-gordes.com/wp-content/uploads/2018/08/cocktail-au-Petit-Palais-dAgla%C3%A9.jpg">
+  <div class="container">
+    <h1>Molotov Cocktail !</h1>
+    <p>Be ready to be on fire !</p>
+    <%= link_to "Add your cocktail",  new_cocktail_path(), class: "btn btn-flat" %>
+  </div>
+</div>
+<div class="container">
+  <div class="cocktails-grid">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+        <div class="card-description">
+          <h2><%= cocktail.name %></h2>
+        </div>
+        <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<nav class="fixed-top">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
